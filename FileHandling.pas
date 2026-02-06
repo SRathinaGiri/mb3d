@@ -1,4 +1,6 @@
 unit FileHandling;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -91,7 +93,7 @@ implementation
 
 uses Mand, ImageProcess, Clipbrd, DivUtils, Math, CustomFormulas, HeaderTrafos,
      Animation, FormulaGUI, Navigator, AniPreviewWindow, Interpolation, Tiling,
-     Math3D, Forms, Maps, Undo, Vcl.Themes, ZBuf16BitGen;
+     Math3D, Forms, Maps, Undo, Themes, ZBuf16BitGen;
 
 function FileIsBigger1(Fname: String): LongBool;
 var F: TSearchRec;

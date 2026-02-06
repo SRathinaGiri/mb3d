@@ -1,10 +1,12 @@
 unit ColorOptionForm;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, ExtCtrls;
 
 type
   TFColorOptions = class(TForm)
@@ -32,7 +34,7 @@ var
 
 implementation
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TFColorOptions.Button1Click(Sender: TObject);
 begin

@@ -1,4 +1,6 @@
 unit OTrapDEcalc;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 // de directly derived from min of vec(its) calculations
 

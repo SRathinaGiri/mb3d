@@ -1,4 +1,6 @@
 unit VoxelExport;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -181,7 +183,7 @@ implementation
 uses CalcVoxelSliceThread, FileHandling, Math, Math3D, Calc, DivUtils, Mand,
   HeaderTrafos, CustomFormulas, ImageProcess;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
   {    d := 2.1345 * 0.5 / VHeader.dZoom;
       Xstart := VHeader.dXmid - d;
       Xend := VHeader.dXmid + d;

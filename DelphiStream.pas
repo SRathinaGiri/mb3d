@@ -3,7 +3,7 @@
 // DelphiStreams.pas - Delphi stream interface
 // -------------------------------------------
 // Version:   1999-09-27
-// Maintain:  Michael Vinther   |   mv@logicnet·dk
+// Maintain:  Michael Vinther   |   mv@logicnetdk
 //
 //
 // Contains:
@@ -13,6 +13,8 @@
 //   TDelphiFilterStream       MeeSoft seekable stream to read from/write to Delphi stream
 
 unit DelphiStream;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

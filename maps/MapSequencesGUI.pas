@@ -1,10 +1,12 @@
 unit MapSequencesGUI;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Vcl.ExtDlgs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls,
+  Dialogs, StdCtrls, ExtDlgs, Buttons, ExtCtrls, ComCtrls,
   MapSequences;
 
 type
@@ -71,7 +73,7 @@ implementation
 uses
   Math, FileHandling;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TMapSequencesFrm.FirstImageEditExit(Sender: TObject);
 var

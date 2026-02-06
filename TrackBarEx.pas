@@ -1,4 +1,6 @@
 unit TrackBarEx;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

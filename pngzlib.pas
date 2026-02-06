@@ -5,6 +5,8 @@
 {Note: The .obj files must be located in the subdirectory \obj}
 
 unit pngzlib;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

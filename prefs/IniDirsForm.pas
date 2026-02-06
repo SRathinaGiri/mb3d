@@ -1,4 +1,6 @@
 unit IniDirsForm;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -51,7 +53,7 @@ var
 
 implementation
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 uses DivUtils, FileHandling, Mand, LightAdjust, Animation, FormulaGUI,
   Tiling, VoxelExport, MonteCarloForm, BulbTracer2UI;

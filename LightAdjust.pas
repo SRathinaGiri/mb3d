@@ -1,11 +1,13 @@
 unit LightAdjust;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, ExtCtrls, Buttons, TypeDefinitions, Math3D,
-  Menus, TrackBarEx, Vcl.ImgList, Vcl.ExtDlgs;
+  Menus, TrackBarEx, ImgList, ExtDlgs;
 
 type
   TLightAdjustForm = class(TForm)
@@ -404,7 +406,7 @@ uses Mand, CalcThread, DivUtils, Math, PaintThread, FileHandling, ImageProcess,
      Animation, ColorPick, Interpolation, Undo, PostProcessForm, HeaderTrafos,
      Maps, Navigator;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 {
     Loption:    Byte;              // bit1: 0: On  1: Off;  bit2: lightmap;  bit3 = bPosLight, bit4+5 = poslight visible+func, bit6 = global light rel to object, bit7 = HSon
@@ -701,9 +703,9 @@ asm
     fld  st
     fmul st, st      //t*t,t
     fld  st
-    fmul st, st(2)   //t³,t²,t
+    fmul st, st(2)   //t,t,t
     fld  s3
-    fmul st(2), st   //3, t³=sv[3], 3*t²=sv[2], t
+    fmul st(2), st   //3, t=sv[3], 3*t=sv[2], t
     fld  st(2)       //sv[2], 3, sv[3], sv[2], t
     fsub st, st(2)   //sv[2]-sv[3], 3, sv[3], sv[2], t
     fsub st, st(4)   //sv[2]-sv[3]-t, 3, sv[3], sv[2], t
@@ -719,9 +721,9 @@ asm
     fadd s6
     fstp dword [eax + 4]
     fmul st, st(1)
-    fsubp st(2), st  //t³,3*t²-3*t³,t
+    fsubp st(2), st  //t,3*t-3*t,t
     fsub st, st(2)
-    fstp dword [eax + 12]  //3*t²-3*t³,t
+    fstp dword [eax + 12]  //3*t-3*t,t
     fxch
     fmul s6
     faddp
@@ -1681,7 +1683,7 @@ begin
       i2 := 5;
     end;
     for i := i1 to i2 do if (LAtmpLight.Lights[i].Loption and 1) = 0 then
-      TabControl1.Tabs[i] := 'Li.' + IntToStr(i + 1) + ' •'
+      TabControl1.Tabs[i] := 'Li.' + IntToStr(i + 1) + ' '
     else
       TabControl1.Tabs[i] := 'Li.' + IntToStr(i + 1);
 end;

@@ -14,13 +14,15 @@
   02110-1301 USA, or see the FSF site: http://www.fsf.org.
 *)
 unit BulbTracer2UI;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, Buttons, TypeDefinitions, ComCtrls,
-  Contnrs, VertexList, BulbTracer2Config, Vcl.Tabs, BulbTracerUITools,
+  Contnrs, VertexList, BulbTracer2Config, Tabs, BulbTracerUITools,
   JvExStdCtrls, JvGroupBox, TrackBarEx, ObjectScanner2, Generics.Collections,
   SyncObjs, MeshIOUtil;
 
@@ -300,7 +302,7 @@ uses CalcVoxelSliceThread, FileHandling, Math, Math3D, Calc, DivUtils, Mand,
   HeaderTrafos, CustomFormulas, ImageProcess, VectorMath, DateUtils, BulbTracer2,
   MeshPreviewUI, MeshWriter, MeshReader, Ole2, Clipbrd;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 const
   OpenGLWindowTitleMesh = 'Generated Mesh';

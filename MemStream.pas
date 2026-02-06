@@ -3,7 +3,7 @@
 // MemStream.pas - Seekable memory stream
 // --------------------------------------
 // Changed:   2003-06-11
-// Maintain:  Michael Vinther   |   mv@logicnet·dk
+// Maintain:  Michael Vinther   |   mv@logicnetdk
 //
 // Contains:
 //   (TBaseStream)
@@ -20,6 +20,8 @@
 //    TMemBlockStream and TMemChunkStream added
 
 unit MemStream;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

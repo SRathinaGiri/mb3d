@@ -1,4 +1,6 @@
 unit ImageProcess;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

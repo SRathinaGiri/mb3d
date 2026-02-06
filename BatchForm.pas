@@ -1,4 +1,6 @@
 unit BatchForm;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -53,7 +55,7 @@ implementation
 
 uses Mand, TypeDefinitions, FileHandling, CustomFormulas;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 const
   Caption_Start_Rendering = 'Start batch rendering';

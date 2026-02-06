@@ -3,12 +3,14 @@
 // Monitor.pas - Memory monitor
 // ----------------------------
 // Version:   2003-02-05
-// Maintain:  Michael Vinther    |    mv@logicnet·dk
+// Maintain:  Michael Vinther    |    mv@logicnetdk
 //
 // Last changes:
 //   Monitor is auto-enabled when assertions and debugging is enabled.
 //
 unit Monitor;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 {DEFINE MonitorObjects}  // Define MonitorObjects to use object monitor
 {DEFINE UseMonitorTags}  // Define UseMonitorTags to give each object a tag #

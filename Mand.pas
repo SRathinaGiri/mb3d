@@ -1,4 +1,6 @@
 unit Mand;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -6,7 +8,7 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, ComCtrls, CalcThread, Buttons, LightAdjust,
   AmbShadowCalcThreadN, PaintThread, FileHandling, Math3D, SHFolder,
-  TypeDefinitions, Menus, Vcl.ExtDlgs, M3Iregister;
+  TypeDefinitions, Menus, ExtDlgs, M3Iregister;
 
 type
   TqualPreset = packed record
@@ -549,11 +551,11 @@ uses Math, DivUtils, ImageProcess, ClipBrd, ShellAPI, FileCtrl, formulas,
      HeaderTrafos, Calc, IniDirsForm, FormulaGUI, Navigator, PostProcessForm,
      DOF, CalcHardShadow, AmbHiQ, BatchForm, Undo, CommDlg, VoxelExport,
      calcBlocky, CalcSR, Tiling, MonteCarloForm, TextBox, pngimage, ColorPick,
-     uMapCalcWindow, FormulaCompiler, MutaGenGUI, VisualThemesGUI, Vcl.Themes,
+     uMapCalcWindow, FormulaCompiler, MutaGenGUI, VisualThemesGUI, Themes,
      MapSequencesGUI, MapSequences, BulbTracer2UI, ScriptUI, HeightMapGenUI,
      ZBuf16BitGenUI;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 function TMand3DForm.GetCalcRect: TRect;
 var //TileRect: TRect;
@@ -3405,7 +3407,7 @@ begin
     Edit30.Text := FloatToStr(v4[2]);
     Edit7.Text := FloatToStr(v4[3]);
       //Wadd
-{The following code causes “stay on top” forms to allow a MessageBox to appear on top. After the message box is closed, the topmost forms are restored so that they continue to float to the top.
+{The following code causes stay on top forms to allow a MessageBox to appear on top. After the message box is closed, the topmost forms are restored so that they continue to float to the top.
 Begin
   with Application do
   begin

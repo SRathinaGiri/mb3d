@@ -1,4 +1,6 @@
 unit DOF;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

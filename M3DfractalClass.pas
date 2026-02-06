@@ -1,4 +1,6 @@
 unit M3DfractalClass;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

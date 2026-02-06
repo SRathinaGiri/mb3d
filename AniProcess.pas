@@ -1,10 +1,12 @@
 unit AniProcess;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, Vcl.ComCtrls;
+  Dialogs, StdCtrls, ExtCtrls, ComCtrls;
 
 type
   TAniProcessForm = class(TForm)
@@ -84,7 +86,7 @@ implementation
 uses Animation, DivUtils, Mand, LightAdjust, TypeDefinitions,
   PostProcessForm, Math, Math3D;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TAniProcessForm.Button1Click(Sender: TObject);
 begin

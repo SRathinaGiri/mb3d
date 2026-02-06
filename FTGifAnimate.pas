@@ -1,4 +1,6 @@
 unit FTGifAnimate;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 (******************************************************************************
 Unit to make an animated GIF.
 Author: Finn Tolderlund

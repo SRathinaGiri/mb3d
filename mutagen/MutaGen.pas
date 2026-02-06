@@ -14,11 +14,13 @@
   02110-1301 USA, or see the FSF site: http://www.fsf.org.
 *)
 unit MutaGen;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
-  Windows, SysUtils, Classes, Vcl.ExtCtrls, Vcl.Graphics, MB3DFacade, FormulaNames;
+  Windows, SysUtils, Classes, ExtCtrls, Graphics, MB3DFacade, FormulaNames;
 
 type
 

@@ -1,4 +1,6 @@
 unit TextBox;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -26,7 +28,7 @@ implementation
 
 uses Mand, FileHandling, LightAdjust, Math;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TFTextBox.Button1Click(Sender: TObject);
 begin

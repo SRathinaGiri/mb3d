@@ -4,6 +4,8 @@
 {Also if you have a translation to other languages and want to}
 {share it, send me: gubadaud@terra.com.br                     }
 unit pnglang;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -68,185 +70,185 @@ resourcestring
     'current image contains no valid header.';
   {$ENDIF}
   {$IFDEF Portuguese}
-  EPngInvalidCRCText = 'Essa imagem "Portable Network Graphics" não é válida ' +
-      'porque contém chunks inválidos de dados (erro crc)';
-  EPNGInvalidIHDRText = 'A imagem "Portable Network Graphics" não pode ser ' +
+  EPngInvalidCRCText = 'Essa imagem "Portable Network Graphics" no  vlida ' +
+      'porque contm chunks invlidos de dados (erro crc)';
+  EPNGInvalidIHDRText = 'A imagem "Portable Network Graphics" no pode ser ' +
       'carregada porque um dos seus chunks importantes (ihdr) pode estar '+
-      'inválido';
-  EPNGMissingMultipleIDATText = 'Essa imagem "Portable Network Graphics" é ' +
-    'inválida porque tem chunks de dados faltando.';
-  EPNGZLIBErrorText = 'Não foi possível descomprimir os dados da imagem ' +
-    'porque ela contém dados inválidos.'#13#10 + ' Descrição: ';
-  EPNGInvalidPaletteText = 'A imagem "Portable Network Graphics" contém ' +
-    'uma paleta inválida.';
-  EPNGInvalidFileHeaderText = 'O arquivo sendo lido não é uma imagem '+
-    '"Portable Network Graphics" válida porque contém um cabeçalho inválido.' +
+      'invlido';
+  EPNGMissingMultipleIDATText = 'Essa imagem "Portable Network Graphics"  ' +
+    'invlida porque tem chunks de dados faltando.';
+  EPNGZLIBErrorText = 'No foi possvel descomprimir os dados da imagem ' +
+    'porque ela contm dados invlidos.'#13#10 + ' Descrio: ';
+  EPNGInvalidPaletteText = 'A imagem "Portable Network Graphics" contm ' +
+    'uma paleta invlida.';
+  EPNGInvalidFileHeaderText = 'O arquivo sendo lido no  uma imagem '+
+    '"Portable Network Graphics" vlida porque contm um cabealho invlido.' +
     ' O arquivo pode estar corrompida, tente obter ela novamente.';
-  EPNGIHDRNotFirstText = 'Essa imagem "Portable Network Graphics" não é ' +
-    'suportada ou pode ser inválida.'#13#10 + '(O chunk IHDR não é o ' +
+  EPNGIHDRNotFirstText = 'Essa imagem "Portable Network Graphics" no  ' +
+    'suportada ou pode ser invlida.'#13#10 + '(O chunk IHDR no  o ' +
     'primeiro)';
-  EPNGNotExistsText = 'A imagem png não pode ser carregada porque ela não ' +
+  EPNGNotExistsText = 'A imagem png no pode ser carregada porque ela no ' +
     'existe.';
-  EPNGSizeExceedsText = 'Essa imagem "Portable Network Graphics" não é ' +
-    'suportada porque a largura ou a altura ultrapassam o tamanho máximo, ' +
-    'que é de 65535 pixels de diâmetro.';
-  EPNGUnknownPalEntryText = 'Não existe essa entrada de paleta.';
-  EPNGMissingPaletteText = 'Essa imagem "Portable Network Graphics" não pode ' +
-    'ser carregada porque usa uma paleta que está faltando.';
+  EPNGSizeExceedsText = 'Essa imagem "Portable Network Graphics" no  ' +
+    'suportada porque a largura ou a altura ultrapassam o tamanho mximo, ' +
+    'que  de 65535 pixels de dimetro.';
+  EPNGUnknownPalEntryText = 'No existe essa entrada de paleta.';
+  EPNGMissingPaletteText = 'Essa imagem "Portable Network Graphics" no pode ' +
+    'ser carregada porque usa uma paleta que est faltando.';
   EPNGUnknownCriticalChunkText = 'Essa imagem "Portable Network Graphics" ' +
-    'contém um chunk crítico desconheçido que não pode ser decodificado.';
-  EPNGUnknownCompressionText = 'Essa imagem "Portable Network Graphics" está ' +
-    'codificada com um esquema de compressão desconheçido e não pode ser ' +
+    'contm um chunk crtico desconheido que no pode ser decodificado.';
+  EPNGUnknownCompressionText = 'Essa imagem "Portable Network Graphics" est ' +
+    'codificada com um esquema de compresso desconheido e no pode ser ' +
     'decodificada.';
   EPNGUnknownInterlaceText = 'Essa imagem "Portable Network Graphics" usa um ' +
-    'um esquema de interlace que não pode ser decodificado.';
-  EPNGCannotAssignChunkText = 'Os chunk devem ser compatíveis para serem ' +
+    'um esquema de interlace que no pode ser decodificado.';
+  EPNGCannotAssignChunkText = 'Os chunk devem ser compatveis para serem ' +
     'copiados.';
-  EPNGUnexpectedEndText = 'Essa imagem "Portable Network Graphics" é ' +
-    'inválida porque o decodificador encontrou um fim inesperado.';
-  EPNGNoImageDataText = 'Essa imagem "Portable Network Graphics" não contém ' +
+  EPNGUnexpectedEndText = 'Essa imagem "Portable Network Graphics"  ' +
+    'invlida porque o decodificador encontrou um fim inesperado.';
+  EPNGNoImageDataText = 'Essa imagem "Portable Network Graphics" no contm ' +
     'dados.';
-  EPNGCannotChangeSizeText = 'A imagem "Portable Network Graphics" não pode ' +
+  EPNGCannotChangeSizeText = 'A imagem "Portable Network Graphics" no pode ' +
     'ser redimensionada mudando as propriedades width e height. Tente ' +
-    'copiar a imagem de um bitmap usando a função assign.';
-  EPNGCannotAddChunkText = 'O programa tentou adicionar um chunk crítico ' +
-    'já existente para a imagem atual, oque não é permitido.';
-  EPNGCannotAddInvalidImageText = 'Não é permitido adicionar um chunk novo ' +
-    'porque a imagem atual é inválida.';
-  EPNGCouldNotLoadResourceText = 'A imagem png não pode ser carregada apartir' +
+    'copiar a imagem de um bitmap usando a funo assign.';
+  EPNGCannotAddChunkText = 'O programa tentou adicionar um chunk crtico ' +
+    'j existente para a imagem atual, oque no  permitido.';
+  EPNGCannotAddInvalidImageText = 'No  permitido adicionar um chunk novo ' +
+    'porque a imagem atual  invlida.';
+  EPNGCouldNotLoadResourceText = 'A imagem png no pode ser carregada apartir' +
     ' do resource.';
-  EPNGOutMemoryText = 'Uma operação não pode ser completada porque o sistema ' +
-    'está sem recursos. Fecha algumas janelas e tente novamente.';
-  EPNGCannotChangeTransparentText = 'Definir transparência booleana não é ' +
-    'permitido para imagens png contendo informação alpha para cada pixel ' +
+  EPNGOutMemoryText = 'Uma operao no pode ser completada porque o sistema ' +
+    'est sem recursos. Fecha algumas janelas e tente novamente.';
+  EPNGCannotChangeTransparentText = 'Definir transparncia booleana no  ' +
+    'permitido para imagens png contendo informao alpha para cada pixel ' +
     '(COLOR_RGBALPHA e COLOR_GRAYSCALEALPHA)';
-  EPNGHeaderNotPresentText = 'Essa operação não é válida porque a ' +
-    'imagem atual não contém um cabeçalho válido.';
+  EPNGHeaderNotPresentText = 'Essa operao no  vlida porque a ' +
+    'imagem atual no contm um cabealho vlido.';
   {$ENDIF}
   {Language strings for German}
   {$IFDEF German}
   EPngInvalidCRCText = 'Dieses "Portable Network Graphics" Bild ist ' +
-      'ungültig, weil Teile der Daten fehlerhaft sind (CRC-Fehler)';
+      'ungltig, weil Teile der Daten fehlerhaft sind (CRC-Fehler)';
   EPNGInvalidIHDRText = 'Dieses "Portable Network Graphics" Bild konnte ' +
       'nicht geladen werden, weil wahrscheinlich einer der Hauptdatenbreiche ' +
-	  '(IHDR) beschädigt ist';
+	  '(IHDR) beschdigt ist';
   EPNGMissingMultipleIDATText = 'Dieses "Portable Network Graphics" Bild ' +
-    'ist ungültig, weil Grafikdaten fehlen.';
+    'ist ungltig, weil Grafikdaten fehlen.';
   EPNGZLIBErrorText = 'Die Grafik konnte nicht entpackt werden, weil Teile der ' +
     'komprimierten Daten fehlerhaft sind.'#13#10 + ' Beschreibung: ';
-  EPNGInvalidPaletteText = 'Das "Portable Network Graphics" Bild enthält ' +
-    'eine ungültige Palette.';
+  EPNGInvalidPaletteText = 'Das "Portable Network Graphics" Bild enthlt ' +
+    'eine ungltige Palette.';
   EPNGInvalidFileHeaderText = 'Die Datei, die gelesen wird, ist kein ' +
-    'gültiges "Portable Network Graphics" Bild, da es keinen gültigen ' +
-    'Header enthält. Die Datei könnte beschädigt sein, versuchen Sie, ' +
+    'gltiges "Portable Network Graphics" Bild, da es keinen gltigen ' +
+    'Header enthlt. Die Datei knnte beschdigt sein, versuchen Sie, ' +
     'eine neue Kopie zu bekommen.';
   EPNGIHDRNotFirstText = 'Dieses "Portable Network Graphics" Bild wird ' +
-    'nicht unterstützt oder ist ungültig.'#13#10 +
+    'nicht untersttzt oder ist ungltig.'#13#10 +
     '(Der IHDR-Abschnitt ist nicht der erste Abschnitt in der Datei).';
   EPNGNotExistsText = 'Die PNG Datei konnte nicht geladen werden, da sie ' +
     'nicht existiert.';
   EPNGSizeExceedsText = 'Dieses "Portable Network Graphics" Bild wird nicht ' +
-    'unterstützt, weil entweder seine Breite oder seine Höhe das Maximum von ' +
-    '65535 Pixeln überschreitet.';
+    'untersttzt, weil entweder seine Breite oder seine Hhe das Maximum von ' +
+    '65535 Pixeln berschreitet.';
   EPNGUnknownPalEntryText = 'Es gibt keinen solchen Palettenwert.';
   EPNGMissingPaletteText = 'Dieses "Portable Network Graphics" Bild konnte ' +
-    'nicht geladen werden, weil die benötigte Farbtabelle fehlt.';
+    'nicht geladen werden, weil die bentigte Farbtabelle fehlt.';
   EPNGUnknownCriticalChunkText = 'Dieses "Portable Network Graphics" Bild ' +
-    'enhält einen unbekannten aber notwendigen Teil, welcher nicht entschlüsselt ' +
+    'enhlt einen unbekannten aber notwendigen Teil, welcher nicht entschlsselt ' +
     'werden kann.';
   EPNGUnknownCompressionText = 'Dieses "Portable Network Graphics" Bild ' +
     'wurde mit einem unbekannten Komprimierungsalgorithmus kodiert, welcher ' +
-    'nicht entschlüsselt werden kann.';
+    'nicht entschlsselt werden kann.';
   EPNGUnknownInterlaceText = 'Dieses "Portable Network Graphics" Bild ' +
-    'benutzt ein unbekanntes Interlace-Schema, welches nicht entschlüsselt ' +
+    'benutzt ein unbekanntes Interlace-Schema, welches nicht entschlsselt ' +
     'werden kann.';
-  EPNGCannotAssignChunkText = 'Die Abschnitte müssen kompatibel sein, damit ' +
-    'sie zugewiesen werden können.';
+  EPNGCannotAssignChunkText = 'Die Abschnitte mssen kompatibel sein, damit ' +
+    'sie zugewiesen werden knnen.';
   EPNGUnexpectedEndText = 'Dieses "Portable Network Graphics" Bild ist ' +
-    'ungültig: Der Dekoder ist unerwartete auf das Ende der Datei gestoßen.';
-  EPNGNoImageDataText = 'Dieses "Portable Network Graphics" Bild enthält ' +
+    'ungltig: Der Dekoder ist unerwartete auf das Ende der Datei gestoen.';
+  EPNGNoImageDataText = 'Dieses "Portable Network Graphics" Bild enthlt ' +
     'keine Daten.';
   EPNGCannotChangeSizeText = 'Das "Portable Network Graphics" Bild kann ' +
-    'nicht durch Ändern der Eigenschaften Width und Height in seinen ' +
-    'Abmessungen geändert werden. Versuchen Sie das Bild von einer Bitmap ' +
+    'nicht durch ndern der Eigenschaften Width und Height in seinen ' +
+    'Abmessungen gendert werden. Versuchen Sie das Bild von einer Bitmap ' +
     'aus zuzuweisen.';
   EPNGCannotAddChunkText = 'Das Programm versucht einen existierenden und ' +
-    'notwendigen Abschnitt zum aktuellen Bild hinzuzufügen. Dies ist nicht ' +
-    'zulässig.';
-  EPNGCannotAddInvalidImageText = 'Es ist nicht zulässig, einem ungültigen ' +
-    'Bild einen neuen Abschnitt hinzuzufügen.';
+    'notwendigen Abschnitt zum aktuellen Bild hinzuzufgen. Dies ist nicht ' +
+    'zulssig.';
+  EPNGCannotAddInvalidImageText = 'Es ist nicht zulssig, einem ungltigen ' +
+    'Bild einen neuen Abschnitt hinzuzufgen.';
   EPNGCouldNotLoadResourceText = 'Das PNG Bild konnte nicht aus den ' +
     'Resourcendaten geladen werden.';
-  EPNGOutMemoryText = 'Es stehen nicht genügend Resourcen im System zur ' +
-    'Verfügung, um die Operation auszuführen. Schließen Sie einige Fenster '+
+  EPNGOutMemoryText = 'Es stehen nicht gengend Resourcen im System zur ' +
+    'Verfgung, um die Operation auszufhren. Schlieen Sie einige Fenster '+
     'und versuchen Sie es erneut.';
   EPNGCannotChangeTransparentText = 'Das Setzen der Bit-' +
-    'Transparent-Farbe ist für PNG-Images die Alpha-Werte für jedes ' +
+    'Transparent-Farbe ist fr PNG-Images die Alpha-Werte fr jedes ' +
     'Pixel enthalten (COLOR_RGBALPHA und COLOR_GRAYSCALEALPHA) nicht ' +
-    'zulässig';
+    'zulssig';
   EPNGHeaderNotPresentText = 'Die Datei, die gelesen wird, ist kein ' +
-    'gültiges "Portable Network Graphics" Bild, da es keinen gültigen ' +
-    'Header enthält.';
+    'gltiges "Portable Network Graphics" Bild, da es keinen gltigen ' +
+    'Header enthlt.';
   {$ENDIF}
   {Language strings for French}
   {$IFDEF French}
   EPngInvalidCRCText = 'Cette image "Portable Network Graphics" n''est pas valide ' +
-      'car elle contient des données invalides (erreur crc)';
-  EPNGInvalidIHDRText = 'Cette image "Portable Network Graphics" n''a pu être ' +
-      'chargée car l''une de ses principale donnée (ihdr) doit être corrompue';
+      'car elle contient des donnes invalides (erreur crc)';
+  EPNGInvalidIHDRText = 'Cette image "Portable Network Graphics" n''a pu tre ' +
+      'charge car l''une de ses principale donne (ihdr) doit tre corrompue';
   EPNGMissingMultipleIDATText = 'Cette image "Portable Network Graphics" est ' +
     'invalide car elle contient des parties d''image manquantes.';
-  EPNGZLIBErrorText = 'Impossible de décompresser l''image car elle contient ' +
-    'des données compressées invalides.'#13#10 + ' Description: ';
+  EPNGZLIBErrorText = 'Impossible de dcompresser l''image car elle contient ' +
+    'des donnes compresses invalides.'#13#10 + ' Description: ';
   EPNGInvalidPaletteText = 'L''image "Portable Network Graphics" contient ' +
     'une palette invalide.';
   EPNGInvalidFileHeaderText = 'Le fichier actuellement lu est une image '+
-    '"Portable Network Graphics" invalide car elle contient un en-tête invalide.' +
-    ' Ce fichier doit être corrompu, essayer de l''obtenir à nouveau.';
+    '"Portable Network Graphics" invalide car elle contient un en-tte invalide.' +
+    ' Ce fichier doit tre corrompu, essayer de l''obtenir  nouveau.';
   EPNGIHDRNotFirstText = 'Cette image "Portable Network Graphics" n''est pas ' +
-    'supportée ou doit être invalide.'#13#10 + '(la partie IHDR n''est pas la première)';
-  EPNGNotExistsText = 'Le fichier png n''a pu être chargé car il n''éxiste pas.';
-  EPNGSizeExceedsText = 'Cette image "Portable Network Graphics" n''est pas supportée ' +
-    'car sa longueur ou sa largeur excède la taille maximale, qui est de 65535 pixels.';
-  EPNGUnknownPalEntryText = 'Il n''y a aucune entrée pour cette palette.';
-  EPNGMissingPaletteText = 'Cette image "Portable Network Graphics" n''a pu être ' +
-    'chargée car elle utilise une table de couleur manquante.';
+    'supporte ou doit tre invalide.'#13#10 + '(la partie IHDR n''est pas la premire)';
+  EPNGNotExistsText = 'Le fichier png n''a pu tre charg car il n''xiste pas.';
+  EPNGSizeExceedsText = 'Cette image "Portable Network Graphics" n''est pas supporte ' +
+    'car sa longueur ou sa largeur excde la taille maximale, qui est de 65535 pixels.';
+  EPNGUnknownPalEntryText = 'Il n''y a aucune entre pour cette palette.';
+  EPNGMissingPaletteText = 'Cette image "Portable Network Graphics" n''a pu tre ' +
+    'charge car elle utilise une table de couleur manquante.';
   EPNGUnknownCriticalChunkText = 'Cette image "Portable Network Graphics" ' +
-    'contient une partie critique inconnue qui n'' pu être décodée.';
+    'contient une partie critique inconnue qui n'' pu tre dcode.';
   EPNGUnknownCompressionText = 'Cette image "Portable Network Graphics" est ' +
-    'encodée à l''aide d''un schémas de compression inconnu qui ne peut être décodé.';
+    'encode  l''aide d''un schmas de compression inconnu qui ne peut tre dcod.';
   EPNGUnknownInterlaceText = 'Cette image "Portable Network Graphics" utilise ' +
-    'un schémas d''entrelacement inconnu qui ne peut être décodé.';
-  EPNGCannotAssignChunkText = 'Ce morceau doit être compatible pour être assigné.';
+    'un schmas d''entrelacement inconnu qui ne peut tre dcod.';
+  EPNGCannotAssignChunkText = 'Ce morceau doit tre compatible pour tre assign.';
   EPNGUnexpectedEndText = 'Cette image "Portable Network Graphics" est invalide ' +
-    'car le decodeur est arrivé à une fin de fichier non attendue.';
+    'car le decodeur est arriv  une fin de fichier non attendue.';
   EPNGNoImageDataText = 'Cette image "Portable Network Graphics" ne contient pas de ' +
-    'données.';
+    'donnes.';
   EPNGCannotChangeSizeText = 'Cette image "Portable Network Graphics" ne peut pas ' +
-    'être retaillée en changeant ses propriétés width et height. Essayer d''assigner l''image depuis ' +
+    'tre retaille en changeant ses proprits width et height. Essayer d''assigner l''image depuis ' +
     'un bitmap.';
-  EPNGCannotAddChunkText = 'Le programme a essayé d''ajouter un morceau critique existant ' +
-    'à l''image actuelle, ce qui n''est pas autorisé.';
+  EPNGCannotAddChunkText = 'Le programme a essay d''ajouter un morceau critique existant ' +
+    ' l''image actuelle, ce qui n''est pas autoris.';
   EPNGCannotAddInvalidImageText = 'Il n''est pas permis d''ajouter un nouveau morceau ' +
     'car l''image actuelle est invalide.';
-  EPNGCouldNotLoadResourceText = 'L''image png n''a pu être chargée depuis  ' +
+  EPNGCouldNotLoadResourceText = 'L''image png n''a pu tre charge depuis  ' +
     'l''ID ressource.';
-  EPNGOutMemoryText = 'Certaines opérations n''ont pu être effectuée car le ' +
-    'système n''a plus de ressources. Fermez quelques fenêtres et essayez à nouveau.';
-  EPNGCannotChangeTransparentText = 'Définir le bit de transparence n''est pas ' +
+  EPNGOutMemoryText = 'Certaines oprations n''ont pu tre effectue car le ' +
+    'systme n''a plus de ressources. Fermez quelques fentres et essayez  nouveau.';
+  EPNGCannotChangeTransparentText = 'Dfinir le bit de transparence n''est pas ' +
     'permis pour des images png qui contiennent une valeur alpha pour chaque pixel ' +
     '(COLOR_RGBALPHA et COLOR_GRAYSCALEALPHA)';
-  EPNGHeaderNotPresentText = 'Cette opération n''est pas valide car l''image ' +
+  EPNGHeaderNotPresentText = 'Cette opration n''est pas valide car l''image ' +
     'actuelle ne contient pas de header valide.';
   EPNGAlphaNotSupportedText = 'Le type de couleur de l''image "Portable Network Graphics" actuelle ' +
-    'contient déjà des informations alpha ou il ne peut être converti.';
+    'contient dj des informations alpha ou il ne peut tre converti.';
   {$ENDIF}
   {Language strings for slovenian}
   {$IFDEF Slovenian}
   EPngInvalidCRCText = 'Ta "Portable Network Graphics" slika je neveljavna, ' +
       'ker vsebuje neveljavne dele podatkov (CRC napaka).';
-  EPNGInvalidIHDRText = 'Slike "Portable Network Graphics" ni bilo možno ' +
-      'naložiti, ker je eden od glavnih delov podatkov (IHDR) verjetno pokvarjen.';
+  EPNGInvalidIHDRText = 'Slike "Portable Network Graphics" ni bilo mono ' +
+      'naloiti, ker je eden od glavnih delov podatkov (IHDR) verjetno pokvarjen.';
   EPNGMissingMultipleIDATText = 'Ta "Portable Network Graphics" slika je ' +
     'naveljavna, ker manjkajo deli slike.';
   EPNGZLIBErrorText = 'Ne morem raztegniti slike, ker vsebuje ' +
@@ -255,37 +257,37 @@ resourcestring
     'neveljavno barvno paleto.';
   EPNGInvalidFileHeaderText = 'Datoteka za branje ni veljavna '+
     '"Portable Network Graphics" slika, ker vsebuje neveljavno glavo.' +
-    ' Datoteka je verjetno pokvarjena, poskusite jo ponovno naložiti.';
+    ' Datoteka je verjetno pokvarjena, poskusite jo ponovno naloiti.';
   EPNGIHDRNotFirstText = 'Ta "Portable Network Graphics" slika ni ' +
     'podprta ali pa je neveljavna.'#13#10 + '(IHDR del datoteke ni prvi).';
-  EPNGNotExistsText = 'Ne morem naložiti png datoteke, ker ta ne ' +
+  EPNGNotExistsText = 'Ne morem naloiti png datoteke, ker ta ne ' +
     'obstaja.';
   EPNGSizeExceedsText = 'Ta "Portable Network Graphics" slika ni ' +
-    'podprta, ker ali njena širina ali višina presega najvecjo možno vrednost ' +
+    'podprta, ker ali njena irina ali viina presega najvecjo mono vrednost ' +
     '65535 pik.';
-  EPNGUnknownPalEntryText = 'Slika nima vnešene take barvne palete.';
+  EPNGUnknownPalEntryText = 'Slika nima vneene take barvne palete.';
   EPNGMissingPaletteText = 'Te "Portable Network Graphics" ne morem ' +
-    'naložiti, ker uporablja manjkajoco barvno paleto.';
+    'naloiti, ker uporablja manjkajoco barvno paleto.';
   EPNGUnknownCriticalChunkText = 'Ta "Portable Network Graphics" slika ' +
     'vsebuje neznan kriticni del podatkov, ki ga ne morem prebrati.';
   EPNGUnknownCompressionText = 'Ta "Portable Network Graphics" slika je ' +
     'kodirana z neznano kompresijsko shemo, ki je ne morem prebrati.';
   EPNGUnknownInterlaceText = 'Ta "Portable Network Graphics" slika uporablja ' +
     'neznano shemo za preliv, ki je ne morem prebrati.';
-  EPNGCannotAssignChunkText = Košcki morajo biti med seboj kompatibilni za prireditev vrednosti.';
+  EPNGCannotAssignChunkText = Kocki morajo biti med seboj kompatibilni za prireditev vrednosti.';
   EPNGUnexpectedEndText = 'Ta "Portable Network Graphics" slika je neveljavna, ' +
-    'ker je bralnik prišel do nepricakovanega konca datoteke.';
+    'ker je bralnik priel do nepricakovanega konca datoteke.';
   EPNGNoImageDataText = 'Ta "Portable Network Graphics" ne vsebuje nobenih ' +
     'podatkov.';
   EPNGCannotChangeSizeText = 'Te "Portable Network Graphics" sliki ne morem ' +
-    'spremeniti velikosti s spremembo lastnosti višine in širine. Poskusite ' +
+    'spremeniti velikosti s spremembo lastnosti viine in irine. Poskusite ' +
     'sliko prirediti v bitno sliko.';
   EPNGCannotAddChunkText = 'Program je poskusil dodati obstojeci kriticni ' +
     'kos podatkov k trenutni sliki, kar ni dovoljeno.';
   EPNGCannotAddInvalidImageText = 'Ni dovoljeno dodati nov kos podatkov, ' +
     'ker trenutna slika ni veljavna.';
-  EPNGCouldNotLoadResourceText = 'Ne morem naložiti png slike iz ' +
-    'skladišca.';
+  EPNGCouldNotLoadResourceText = 'Ne morem naloiti png slike iz ' +
+    'skladica.';
   EPNGOutMemoryText = 'Ne morem izvesti operacije, ker je  ' +
     'sistem ostal brez resorjev. Zaprite nekaj oken in poskusite znova.';
   EPNGCannotChangeTransparentText = 'Ni dovoljeno nastaviti prosojnosti posamezne barve ' +

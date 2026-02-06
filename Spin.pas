@@ -1,4 +1,6 @@
 unit Spin;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

@@ -7,6 +7,8 @@ English translation by Pierre le Riche.
 }
 
 unit FastMM4Messages;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

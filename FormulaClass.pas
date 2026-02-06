@@ -1,4 +1,6 @@
 unit FormulaClass;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

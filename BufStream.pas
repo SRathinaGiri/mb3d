@@ -3,7 +3,7 @@
 // BufStream.pas - Stream buffer
 // -----------------------------
 // Changed:   2001-01-30
-// Maintain:  Michael Vinther    |    mv@logicnet·dk
+// Maintain:  Michael Vinther    |    mv@logicnetdk
 //
 // Contains:
 //   (TBaseStream)
@@ -16,6 +16,8 @@
 //
 
 unit BufStream;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

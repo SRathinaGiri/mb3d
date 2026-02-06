@@ -1,4 +1,6 @@
 unit Math3D;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -564,16 +566,16 @@ begin
 asm
     fld  qword [edx]
     fld  st
-    fmul st, st           //x²,x
+    fmul st, st           //x,x
     fld  qword [edx + 8]
     fld  st
-    fmul st, st           //y²,y,x²,x
-    faddp st(2), st       //y,x²+y²,x
+    fmul st, st           //y,y,x,x
+    faddp st(2), st       //y,x+y,x
     fld  qword [edx + 16]
     fld  st
-    fmul st, st           //z²,z,y,x²+y²,x
-    faddp st(3), st       //z,y,x²+y²+z²,x
-    fxch  st(2)           //x²+y²+z²,y,z,x
+    fmul st, st           //z,z,y,x+y,x
+    faddp st(3), st       //z,y,x+y+z,x
+    fxch  st(2)           //x+y+z,y,z,x
     fadd  d1em100
     fsqrt
     fdivr d32767         
@@ -1257,16 +1259,16 @@ begin
 asm                          //max 4 st slots useable because of calling formula
   fld   qword [eax]
   fld   st           //v0,v0
-  fmul  st, st       //v0²,v0
+  fmul  st, st       //v0,v0
   fld   qword [eax + 8]
-  fld   st           //v1,v1,vo²,vo
-  fmul  st, st       //v1²,v1,v0²,v0
-  faddp st(2), st    //v1,v0²+v1²,v0
+  fld   st           //v1,v1,vo,vo
+  fmul  st, st       //v1,v1,v0,v0
+  faddp st(2), st    //v1,v0+v1,v0
   fld   qword [eax + 16]
-  fmul  st, st       //v2²,v1,v0²+v1²,v0
+  fmul  st, st       //v2,v1,v0+v1,v0
   fadd  d1em100
-  faddp st(2), st    //v1,v0²+v1²+v2²,v0
-  fxch               //v0²+v1²+v2²,v1,v0
+  faddp st(2), st    //v1,v0+v1+v2,v0
+  fxch               //v0+v1+v2,v1,v0
   fsqrt              //r,v1,v0
   fld1               //1,r,v1,v0
   fdivrp             //1/r,v1,v0
@@ -1297,17 +1299,17 @@ begin
 asm
   fld   qword [eax]
   fld   st           //v0,v0
-  fmul  st, st       //v0²,v0
+  fmul  st, st       //v0,v0
   fld   qword [eax + 8]
   fld   st
-  fmul  st, st       //v1²,v1,v0²,v0
-  faddp st(2), st    //v1,v0²+v1²,v0
+  fmul  st, st       //v1,v1,v0,v0
+  faddp st(2), st    //v1,v0+v1,v0
   fld   qword [eax + 16]
-  fld   st           //v2,v2,v1,v0²+v1²,v0
-  fmul  st, st       //v2²,v2,v1,v0²+v1²,v0
+  fld   st           //v2,v2,v1,v0+v1,v0
+  fmul  st, st       //v2,v2,v1,v0+v1,v0
   fadd  d1em100
-  faddp st(3), st    //v2,v1,v0²+v1²+v2²,v0
-  fxch  st(2)        //v0²+v1²+v2²,v1,v2,v0
+  faddp st(3), st    //v2,v1,v0+v1+v2,v0
+  fxch  st(2)        //v0+v1+v2,v1,v2,v0
   fsqrt
   fld1
   fdivrp
@@ -1329,17 +1331,17 @@ begin
 asm
   fld   dword [eax]
   fld   st           //v0,v0
-  fmul  st, st       //v0²,v0
+  fmul  st, st       //v0,v0
   fld   dword [eax + 4]
   fld   st
-  fmul  st, st       //v1²,v1,v0²,v0
-  faddp st(2), st    //v1,v0²+v1²,v0
+  fmul  st, st       //v1,v1,v0,v0
+  faddp st(2), st    //v1,v0+v1,v0
   fld   dword [eax + 8]
-  fld   st           //v2,v2,v1,v0²+v1²,v0
-  fmul  st, st       //v2²,v2,v1,v0²+v1²,v0
+  fld   st           //v2,v2,v1,v0+v1,v0
+  fmul  st, st       //v2,v2,v1,v0+v1,v0
   fadd  s1em30
-  faddp st(3), st    //v2,v1,v0²+v1²+v2²,v0
-  fxch  st(2)        //v0²+v1²+v2²,v1,v2,v0
+  faddp st(3), st    //v2,v1,v0+v1+v2,v0
+  fxch  st(2)        //v0+v1+v2,v1,v2,v0
   fsqrt
   fld1
   fdivrp
@@ -1370,17 +1372,17 @@ begin
 asm
   fld   qword [eax]
   fld   st           //v0,v0
-  fmul  st, st       //v0²,v0
+  fmul  st, st       //v0,v0
   fld   qword [eax + 8]
   fld   st
-  fmul  st, st       //v1²,v1,v0²,v0
-  faddp st(2), st    //v1,v0²+v1²,v0
+  fmul  st, st       //v1,v1,v0,v0
+  faddp st(2), st    //v1,v0+v1,v0
   fld   qword [eax + 16]
-  fld   st           //v2,v2,v1,v0²+v1²,v0
-  fmul  st, st       //v2²,v2,v1,v0²+v1²,v0
+  fld   st           //v2,v2,v1,v0+v1,v0
+  fmul  st, st       //v2,v2,v1,v0+v1,v0
   fadd  d1em100
-  faddp st(3), st    //v2,v1,v0²+v1²+v2²,v0
-  fxch  st(2)        //v0²+v1²+v2²,v1,v2,v0
+  faddp st(3), st    //v2,v1,v0+v1+v2,v0
+  fxch  st(2)        //v0+v1+v2,v1,v2,v0
   fsqrt
   fld   qword [ebp + 8]
   fdivrp
@@ -1403,17 +1405,17 @@ end;                    }
 asm
   fld   qword [eax]
   fld   st           //v0,v0
-  fmul  st, st       //v0²,v0
+  fmul  st, st       //v0,v0
   fld   qword [eax + 8]
   fld   st
-  fmul  st, st       //v1²,v1,v0²,v0
-  faddp st(2), st    //v1,v0²+v1²,v0
+  fmul  st, st       //v1,v1,v0,v0
+  faddp st(2), st    //v1,v0+v1,v0
   fld   qword [eax + 16]
-  fld   st           //v2,v2,v1,v0²+v1²,v0
-  fmul  st, st       //v2²,v2,v1,v0²+v1²,v0
+  fld   st           //v2,v2,v1,v0+v1,v0
+  fmul  st, st       //v2,v2,v1,v0+v1,v0
   fadd  d1em100
-  faddp st(3), st    //v2,v1,v0²+v1²+v2²,v0
-  fxch  st(2)        //v0²+v1²+v2²,v1,v2,v0
+  faddp st(3), st    //v2,v1,v0+v1+v2,v0
+  fxch  st(2)        //v0+v1+v2,v1,v2,v0
   fsqrt
   fld   qword [ebp + 8]
   fdivrp
@@ -1436,17 +1438,17 @@ begin
 asm
   fld   dword [eax]
   fld   st           //v0,v0
-  fmul  st, st       //v0²,v0
+  fmul  st, st       //v0,v0
   fld   dword [eax + 4]
   fld   st
-  fmul  st, st       //v1²,v1,v0²,v0
-  faddp st(2), st    //v1,v0²+v1²,v0
+  fmul  st, st       //v1,v1,v0,v0
+  faddp st(2), st    //v1,v0+v1,v0
   fld   dword [eax + 8]
-  fld   st           //v2,v2,v1,v0²+v1²,v0
-  fmul  st, st       //v2²,v2,v1,v0²+v1²,v0
+  fld   st           //v2,v2,v1,v0+v1,v0
+  fmul  st, st       //v2,v2,v1,v0+v1,v0
   fadd  d1em100
-  faddp st(3), st    //v2,v1,v0²+v1²+v2²,v0
-  fxch  st(2)        //v0²+v1²+v2²,v1,v2,v0
+  faddp st(3), st    //v2,v1,v0+v1+v2,v0
+  fxch  st(2)        //v0+v1+v2,v1,v2,v0
   fsqrt
   fld1
   fdivrp
@@ -1469,17 +1471,17 @@ const d32767: Double = 32767;
 asm
   fld   dword [eax]
   fld   st           //v0,v0
-  fmul  st, st       //v0²,v0
+  fmul  st, st       //v0,v0
   fld   dword [eax + 4]
   fld   st
-  fmul  st, st       //v1²,v1,v0²,v0
-  faddp st(2), st    //v1,v0²+v1²,v0
+  fmul  st, st       //v1,v1,v0,v0
+  faddp st(2), st    //v1,v0+v1,v0
   fld   dword [eax + 8]
-  fld   st           //v2,v2,v1,v0²+v1²,v0
-  fmul  st, st       //v2²,v2,v1,v0²+v1²,v0
+  fld   st           //v2,v2,v1,v0+v1,v0
+  fmul  st, st       //v2,v2,v1,v0+v1,v0
   fadd  d1em100
-  faddp st(3), st    //v2,v1,v0²+v1²+v2²,v0
-  fxch  st(2)        //v0²+v1²+v2²,v1,v2,v0
+  faddp st(3), st    //v2,v1,v0+v1+v2,v0
+  fxch  st(2)        //v0+v1+v2,v1,v2,v0
   fsqrt
   fld   d32767
   fdivrp

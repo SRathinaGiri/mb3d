@@ -1,11 +1,13 @@
 unit MonteCarloForm;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, M3Iregister,
-  Dialogs, StdCtrls, Buttons, ExtCtrls, ComCtrls, TypeDefinitions, Vcl.ExtDlgs,
-  Vcl.ImgList, Vcl.Grids, Contnrs;
+  Dialogs, StdCtrls, Buttons, ExtCtrls, ComCtrls, TypeDefinitions, ExtDlgs,
+  ImgList, Grids, Contnrs;
 
 type
   TBatchEntry = class;
@@ -216,7 +218,7 @@ uses Mand, Math3D, PaintThread, ImageProcess, HeaderTrafos, Tiling, CommDlg,
   PostProcessForm, DivUtils, CalcMonteCarlo, CustomFormulas, FileHandling,
   LightAdjust, Maps, Math, ColorOptionForm, DateUtils;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 const
   BatchPnlWidth = 262;

@@ -1,4 +1,6 @@
 unit Paint;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 //
 //  for painting the image out of the paras, only for animation previews, just mainthread
 //

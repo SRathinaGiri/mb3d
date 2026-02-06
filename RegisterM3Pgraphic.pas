@@ -1,4 +1,6 @@
-unit RegisterM3Pgraphic;   // Just enough to make the OpenPictureDialog work with m3p files
+unit RegisterM3Pgraphic;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+   // Just enough to make the OpenPictureDialog work with m3p files
 
 interface
 

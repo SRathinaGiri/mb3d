@@ -1,4 +1,6 @@
 unit ThreadUtils;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 // allocating, freeing mem for threadstats records giving an interface between
 // threads and user interface.

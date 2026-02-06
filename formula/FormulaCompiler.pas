@@ -15,6 +15,8 @@
 *)
 
 unit FormulaCompiler;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

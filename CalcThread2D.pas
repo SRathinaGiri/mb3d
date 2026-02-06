@@ -1,4 +1,6 @@
 unit CalcThread2D;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

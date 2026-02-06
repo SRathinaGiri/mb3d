@@ -1,4 +1,6 @@
 unit Maps;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 //map loading, access, managing, freeing
 

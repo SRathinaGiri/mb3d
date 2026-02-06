@@ -1,4 +1,6 @@
 unit GIFImage;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 ////////////////////////////////////////////////////////////////////////////////
 //                                                                            //
 // Project:	GIF Graphics Object                                           //

@@ -1,4 +1,6 @@
 unit FormulaGUI;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -235,7 +237,7 @@ implementation
 uses Mand, CustomFormulas, DivUtils, Math, HeaderTrafos, FileHandling, formulas,
   PostProcessForm, Math3D, FormulaNames, JITFormulaEditGUI;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TFormulaGUIForm.UpdateFromHeader(Header: TPMandHeader10);
 begin
@@ -456,8 +458,8 @@ begin
           d := Max(d, PTCustomFormula(Mand3DForm.MHeader.PHCustomF[i]).dRstop)
         else
           d := Max(d, 16);
-        if i = 0 then TabControl1.Tabs[0] := 'Formula1 •'
-                 else TabControl1.Tabs[i] := 'Fo.' + IntToStr(i + 1) + ' •';
+        if i = 0 then TabControl1.Tabs[0] := 'Formula1 '
+                 else TabControl1.Tabs[i] := 'Fo.' + IntToStr(i + 1) + ' ';
       end
       else if i = 0 then TabControl1.Tabs[0] := 'Formula1'
                     else TabControl1.Tabs[i] := 'Fo.' + IntToStr(i + 1);
@@ -493,10 +495,10 @@ begin
         if t = 0 then
         begin
           if i < 1 then TabControl1.Tabs.Add('Formula1')
-                   else TabControl1.Tabs.Add('Formula1 •');
+                   else TabControl1.Tabs.Add('Formula1 ');
         end
         else if i < 1 then TabControl1.Tabs.Add('Fo.' + IntToStr(t + 1))
-                      else TabControl1.Tabs.Add('Fo.' + IntToStr(t + 1) + ' •');
+                      else TabControl1.Tabs.Add('Fo.' + IntToStr(t + 1) + ' ');
       end;
       TabControl1.TabIndex := Min(n, ti);
     end else begin
@@ -507,10 +509,10 @@ begin
         if t = 0 then
         begin
           if i < 1 then TabControl1.Tabs[t] := 'Formula1'
-                   else TabControl1.Tabs[t] := 'Formula1 •';
+                   else TabControl1.Tabs[t] := 'Formula1 ';
         end
         else if i < 1 then TabControl1.Tabs[t] := 'Fo.' + IntToStr(t + 1)
-                      else TabControl1.Tabs[t] := 'Fo.' + IntToStr(t + 1) + ' •';
+                      else TabControl1.Tabs[t] := 'Fo.' + IntToStr(t + 1) + ' ';
       end;
     end;
     if n = 5 then LabelItCount.Caption := 'Iterationcount' else LabelItCount.Caption := 'Weight';
