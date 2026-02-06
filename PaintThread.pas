@@ -1,4 +1,6 @@
 unit PaintThread;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

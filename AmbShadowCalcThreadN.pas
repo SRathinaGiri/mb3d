@@ -1,4 +1,6 @@
 unit AmbShadowCalcThreadN;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

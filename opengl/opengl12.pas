@@ -1,4 +1,6 @@
 unit opengl12;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 {define USE_SDL}
 
 {

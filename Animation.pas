@@ -1,4 +1,6 @@
 unit Animation;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -218,7 +220,7 @@ uses Math, DivUtils, AniPreviewWindow, Calc, ImageProcess, AniProcess, CalcSR,
      CustomFormulas, DOF, Paint, CalcHardShadow, Interpolation, PaintThread,
      Navigator, Maps, MapSequences;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TAnimationForm.WmThreadReady(var Msg: TMessage);
 begin

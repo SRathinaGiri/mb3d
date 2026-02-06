@@ -1,4 +1,6 @@
 unit uPicopendialog;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -127,7 +129,7 @@ var
   hParent: THandle;
   s: String;
 begin
-  hParent := GetParent(Handle);    // hparent ist das übergeordnete fenster?
+  hParent := GetParent(Handle);    // hparent ist das bergeordnete fenster?
   GetWindowRect(hParent, rect);    // relative to screen
   SetWindowPos(hParent, 0, 0, 0, rect.Right - rect.Left + 287,
                rect.Bottom - rect.Top - 38, SWP_NOMOVE);

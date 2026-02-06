@@ -1,4 +1,6 @@
 unit CalcHardShadow;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

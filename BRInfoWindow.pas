@@ -1,4 +1,6 @@
 unit BRInfoWindow;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -22,7 +24,7 @@ var
 
 implementation
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TBRInfoForm.FormShow(Sender: TObject);
 begin

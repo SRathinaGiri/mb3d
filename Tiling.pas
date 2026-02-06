@@ -1,10 +1,12 @@
 unit Tiling;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, Buttons, TypeDefinitions, Menus, Vcl.ComCtrls;
+  Dialogs, ExtCtrls, StdCtrls, Buttons, TypeDefinitions, Menus, ComCtrls;
 
 type
   TTilingForm = class(TForm)
@@ -130,7 +132,7 @@ implementation
 uses FileHandling, Mand, HeaderTrafos, DivUtils, Math, LightAdjust, ImageProcess,
   BRInfoWindow;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 function MakeFilePointIndizes(P: TPoint; decimals: Integer; const BigRenderData: TBigRenderData): String;
 var s: String;

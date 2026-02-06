@@ -1,4 +1,6 @@
 unit HeaderTrafos;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 // All kind of transformations between Header and Light values
 // + calc Thread parameters

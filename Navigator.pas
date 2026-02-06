@@ -1,4 +1,6 @@
 unit Navigator;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -344,7 +346,7 @@ uses NaviCalcThread, DivUtils, HeaderTrafos, Mand, Math, CustomFormulas,
   LightAdjust, FileHandling, Animation, FormulaGUI, Calc, ThreadUtils,
   MapSequences;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 {procedure TFNavigator.WndProc(var Message: TMessage);
 begin

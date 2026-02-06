@@ -14,20 +14,22 @@
   02110-1301 USA, or see the FSF site: http://www.fsf.org.
 *)
 unit MutaGenGUI;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, JvExForms,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, ExtCtrls, JvExForms,
   JvCustomItemViewer, JvImagesViewer, JvComponentBase, JvFormAnimatedIcon, MutaGen,
-  Vcl.ComCtrls, JvExComCtrls, JvProgressBar, MB3DFacade, Vcl.Menus, JvComCtrls,
-  JvxSlider, JvExControls, JvSlider, TrackBarEx, Vcl.Buttons, PreviewRenderer,
+  ComCtrls, JvExComCtrls, JvProgressBar, MB3DFacade, Menus, JvComCtrls,
+  JvxSlider, JvExControls, JvSlider, TrackBarEx, Buttons, PreviewRenderer,
   JvExStdCtrls, JvGroupBox, JvOutlookBar, JvExExtCtrls, JvExtComponent,
   JvCaptionPanel, JvPageList, JvNavigationPane, JvClipboardMonitor;
 
 type
-  TCategoryPanel = class(Vcl.ExtCtrls.TCategoryPanel)
+  TCategoryPanel = class(ExtCtrls.TCategoryPanel)
   protected
     procedure DrawCollapsedPanel(ACanvas: TCanvas); override;
   end;
@@ -160,7 +162,7 @@ var
 
 implementation
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 uses
   Mand, TypeDefinitions, CustomFormulas, Contnrs, Math, FileHandling;
 

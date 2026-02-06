@@ -1,11 +1,13 @@
 unit ScriptUI;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, TypeDefinitions, ComCtrls, Vcl.ImgList,
-  Vcl.Buttons;
+  Dialogs, StdCtrls, ExtCtrls, TypeDefinitions, ComCtrls, ImgList,
+  Buttons;
 
 type
   TScriptEditorForm = class(TForm)
@@ -48,7 +50,7 @@ implementation
 
 uses Mand, Math3D, FileHandling, ScriptCompiler, CompilerUtil, DateUtils;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TScriptEditorForm.Compile( const DoRun: Boolean );
 var

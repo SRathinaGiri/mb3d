@@ -1,4 +1,6 @@
 unit DivUtils;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

@@ -1,9 +1,11 @@
 unit ZBuf16BitGen;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
-  Windows, SysUtils, Classes, Vcl.Graphics, Math;
+  Windows, SysUtils, Classes, Graphics, Math;
 
 type
   TZBufInfo = packed record

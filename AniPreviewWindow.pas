@@ -1,4 +1,6 @@
 unit AniPreviewWindow;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -80,7 +82,7 @@ implementation
 uses Mand, DivUtils, LightAdjust, Math, Calc, ImageProcess, MMSystem, CalcSR,
      CustomFormulas, DOF, Paint, CalcHardShadow, Interpolation, Maps, MapSequences;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TAniPreviewForm.WmThreadReady(var Msg: TMessage);
 begin

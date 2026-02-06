@@ -1,10 +1,12 @@
 unit ColorPick;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, TypeDefinitions, StdCtrls, Buttons, Vcl.ComCtrls,
+  Dialogs, ExtCtrls, TypeDefinitions, StdCtrls, Buttons, ComCtrls,
   TrackBarEx;
 
 type
@@ -111,7 +113,7 @@ implementation
 
 uses Mand, LightAdjust, Math, Math3D, DivUtils, Interpolation, HeaderTrafos;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 function GetIntensity(var StartI: Integer): LongBool;
 var s: String;

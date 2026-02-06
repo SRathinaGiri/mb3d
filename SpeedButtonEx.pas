@@ -1,4 +1,6 @@
 unit SpeedButtonEx;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

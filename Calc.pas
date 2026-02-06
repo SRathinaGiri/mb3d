@@ -1,4 +1,6 @@
 unit Calc;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

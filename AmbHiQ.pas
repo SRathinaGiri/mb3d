@@ -1,4 +1,6 @@
-unit AmbHiQ;     //24bit SSAO
+unit AmbHiQ;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+     //24bit SSAO
 
 interface
 

@@ -1,11 +1,13 @@
 unit PostProcessForm;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, TypeDefinitions, ComCtrls, Vcl.ImgList,
-  Vcl.Buttons;
+  Dialogs, StdCtrls, ExtCtrls, TypeDefinitions, ComCtrls, ImgList,
+  Buttons;
 
 type
   TPostProForm = class(TForm)
@@ -187,7 +189,7 @@ implementation
 uses Mand, DOF, DivUtils, ImageProcess, DoubleSize, CalcPart, HeaderTrafos,
  CalcMonteCarlo, CalcSR, Math3D, Tiling, LightAdjust, FileHandling;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TPostProForm.HardShadowsBtnClick(Sender: TObject);
 begin

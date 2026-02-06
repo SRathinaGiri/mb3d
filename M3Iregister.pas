@@ -1,6 +1,8 @@
 { Just enough to make the OpenPictureDialog work with M3I + M3C }
 
 unit M3Iregister;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

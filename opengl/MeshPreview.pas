@@ -14,11 +14,13 @@
   02110-1301 USA, or see the FSF site: http://www.fsf.org.
 *)
 unit MeshPreview;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
-  SysUtils, Classes, Windows, dglOpenGL, Vcl.Graphics, VertexList, VectorMath,
+  SysUtils, Classes, Windows, dglOpenGL, Graphics, VertexList, VectorMath,
   OpenGLPreviewUtil, ShaderUtil, Forms;
 
 type

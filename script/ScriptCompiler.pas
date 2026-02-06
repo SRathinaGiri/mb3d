@@ -4,6 +4,8 @@
 { ---------------------------------------------------------------------------- }
 
 unit ScriptCompiler;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

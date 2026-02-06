@@ -1,4 +1,6 @@
 unit CalcVoxelSliceThread;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

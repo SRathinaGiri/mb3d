@@ -14,13 +14,15 @@
   02110-1301 USA, or see the FSF site: http://www.fsf.org.
 *)
 unit JITFormulaEditGUI;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ExtCtrls,
-  JITFormulas, Vcl.Buttons;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, ComCtrls, ExtCtrls,
+  JITFormulas, Buttons;
 
 type
   TEditMode = (emNew, emEdit, emError);
@@ -141,7 +143,7 @@ var
 
 implementation
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 uses
   CustomFormulas, FileHandling, ParamValueEditGUI, DivUtils, TypeDefinitions,
   FormulaCompiler, CompilerUtil;

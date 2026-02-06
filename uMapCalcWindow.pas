@@ -1,11 +1,13 @@
 unit uMapCalcWindow;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, TypeDefinitions,
-  Vcl.ExtCtrls, Math3D;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, ComCtrls, StdCtrls, TypeDefinitions,
+  ExtCtrls, Math3D;
 
 type
   TMapCalcWindow = class(TForm)
@@ -36,7 +38,7 @@ implementation
 
 uses DivUtils, HeaderTrafos, Math, Calc, Maps, Mand;
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 procedure TMapCalcWindow.Button1Click(Sender: TObject);
 begin

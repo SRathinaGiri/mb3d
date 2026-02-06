@@ -1,4 +1,6 @@
 unit formulas;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -2155,7 +2157,7 @@ db   $66,$0F,$7C,$C0            //haddpd  xmm0, xmm0
      jmp  @3
 @1:  cmp  edx, 6
      jl   @2
-@3:  mulsd   xmm5, xmm3         //*r²
+@3:  mulsd   xmm5, xmm3         //*r
 @2:  shr  edx, 1
      jnc  @up
      mulsd   xmm5, xmm1
@@ -2329,7 +2331,7 @@ db   $66,$0F,$7C,$DB      //haddpd  xmm3, xmm3
      movapd  xmm3, xmm1          //z
      cmp  edx, 4
      jl   @@2
-     movapd  xmm4, xmm0          //z²
+     movapd  xmm4, xmm0          //z
      movapd  xmm1, xmm0
      call @CMUL                  //z^4
      cmp  edx, 8
@@ -2736,17 +2738,17 @@ asm
   movapd  xmm3, [eax + 16]    //x[2,3]
   movapd  xmm5, xmm0          //x,y
   movapd  xmm6, xmm2          //x[0,1]
-  mulpd   xmm0, xmm0          //x²,y²
-  mulpd   xmm2, xmm2          //x[0]²,x[1]²
-  mulsd   xmm1, xmm1          //z²,w
-  mulsd   xmm3, xmm3          //x[2]²
-  addsd   xmm1, xmm0          //z²+x²
-  addsd   xmm3, xmm2          //x[2]²+x[0]²
-  unpckhpd xmm0, xmm0         //y²
-  unpckhpd xmm2, xmm2         //x[1]²
-  addsd   xmm1, xmm0          //x²+y²+z²
-  addsd   xmm3, xmm2          //x[0]²+x[1]²+x[2]²
-  unpcklpd xmm3, xmm1         //x[0]²+x[1]²+x[2]²,x²+y²+z²
+  mulpd   xmm0, xmm0          //x,y
+  mulpd   xmm2, xmm2          //x[0],x[1]
+  mulsd   xmm1, xmm1          //z,w
+  mulsd   xmm3, xmm3          //x[2]
+  addsd   xmm1, xmm0          //z+x
+  addsd   xmm3, xmm2          //x[2]+x[0]
+  unpckhpd xmm0, xmm0         //y
+  unpckhpd xmm2, xmm2         //x[1]
+  addsd   xmm1, xmm0          //x+y+z
+  addsd   xmm3, xmm2          //x[0]+x[1]+x[2]
+  unpcklpd xmm3, xmm1         //x[0]+x[1]+x[2],x+y+z
   sqrtpd  xmm0, xmm3          //xx,yy
   mulpd   xmm0, xmm7          //xx*s1,yy*s2
   pshufd  xmm2, xmm0, $4E
@@ -2765,11 +2767,11 @@ asm
 
   movapd  xmm4, xmm5          //x,y
   movsd   xmm2, xmm3          //z
-  mulpd   xmm4, xmm4          //x²,y²
-  mulsd   xmm2, xmm2          //z²      4D:  mulpd
-  addsd   xmm2, xmm4          //z²+x²   4D: addpd ...
-  unpckhpd xmm4, xmm4         //y²
-  addsd   xmm4, xmm2          //x²+y²+z²
+  mulpd   xmm4, xmm4          //x,y
+  mulsd   xmm2, xmm2          //z      4D:  mulpd
+  addsd   xmm2, xmm4          //z+x   4D: addpd ...
+  unpckhpd xmm4, xmm4         //y
+  addsd   xmm4, xmm2          //x+y+z
   addsd   xmm4, d1em40
   sqrtsd  xmm4, xmm4
 
@@ -2963,17 +2965,17 @@ asm
   movapd  xmm3, [eax + 16]    //x[2,3]
   movapd  xmm5, xmm0          //x,y
   movapd  xmm6, xmm2          //x[0,1]
-  mulpd   xmm0, xmm0          //x²,y²
-  mulpd   xmm2, xmm2          //x[0]²,x[1]²
-  mulsd   xmm1, xmm1          //z²,w
-  mulsd   xmm3, xmm3          //x[2]²
-  addsd   xmm1, xmm0          //z²+x²
-  addsd   xmm3, xmm2          //x[2]²+x[0]²
-  unpckhpd xmm0, xmm0         //y²
-  unpckhpd xmm2, xmm2         //x[1]²
-  addsd   xmm1, xmm0          //x²+y²+z²
-  addsd   xmm3, xmm2          //x[0]²+x[1]²+x[2]²
-  unpcklpd xmm3, xmm1         //x[0]²+x[1]²+x[2]²,x²+y²+z²
+  mulpd   xmm0, xmm0          //x,y
+  mulpd   xmm2, xmm2          //x[0],x[1]
+  mulsd   xmm1, xmm1          //z,w
+  mulsd   xmm3, xmm3          //x[2]
+  addsd   xmm1, xmm0          //z+x
+  addsd   xmm3, xmm2          //x[2]+x[0]
+  unpckhpd xmm0, xmm0         //y
+  unpckhpd xmm2, xmm2         //x[1]
+  addsd   xmm1, xmm0          //x+y+z
+  addsd   xmm3, xmm2          //x[0]+x[1]+x[2]
+  unpcklpd xmm3, xmm1         //x[0]+x[1]+x[2],x+y+z
   sqrtpd  xmm0, xmm3          //xx,yy
   mulpd   xmm0, xmm7          //xx*s1,yy*s2
   pshufd  xmm2, xmm0, $4E
@@ -2992,11 +2994,11 @@ asm
 
   movapd  xmm4, xmm5          //x,y
   movsd   xmm2, xmm3          //z
-  mulpd   xmm4, xmm4          //x²,y²
-  mulsd   xmm2, xmm2          //z²      4D:  mulpd
-  addsd   xmm2, xmm4          //z²+x²   4D: addpd ...
-  unpckhpd xmm4, xmm4         //y²
-  addsd   xmm4, xmm2          //x²+y²+z²
+  mulpd   xmm4, xmm4          //x,y
+  mulsd   xmm2, xmm2          //z      4D:  mulpd
+  addsd   xmm2, xmm4          //z+x   4D: addpd ...
+  unpckhpd xmm4, xmm4         //y
+  addsd   xmm4, xmm2          //x+y+z
   addsd   xmm4, d1em40
   sqrtsd  xmm4, xmm4
 

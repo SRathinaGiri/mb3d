@@ -1,4 +1,6 @@
 unit VisualStylesGUI;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
@@ -27,10 +29,10 @@ var
 
 implementation
 
-{$R *.dfm}
+{$IFDEF FPC}{$R *.lfm}{$ELSE}{$R *.dfm}{$ENDIF}
 
 uses
- Vcl.Themes;
+ Themes;
 
 procedure TVisualStylesForm.SaveAndExitBtnClick(Sender: TObject);
 begin

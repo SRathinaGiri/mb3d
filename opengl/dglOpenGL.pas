@@ -89,6 +89,8 @@
 
 
 unit dglOpenGL;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

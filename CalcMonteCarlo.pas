@@ -1,4 +1,6 @@
 unit CalcMonteCarlo;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 

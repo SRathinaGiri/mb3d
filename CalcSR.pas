@@ -1,4 +1,6 @@
 unit CalcSR;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 //  Calculate Reflections
 

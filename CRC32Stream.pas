@@ -24,6 +24,8 @@
 //
 {$G+}
 unit CRC32Stream;
+{$IFDEF FPC}{$MODE Delphi}{$H+}{$ENDIF}
+
 
 interface
 
